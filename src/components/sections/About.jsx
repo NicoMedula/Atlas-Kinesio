@@ -9,7 +9,10 @@ const About = () => {
   ];
 
   return (
-    <section id="nosotros" className="py-16 sm:py-20 bg-gray-50">
+    <section
+      id="nosotros"
+      className="py-16 sm:py-20 bg-white dark:bg-dark-primary transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Columna de Imagen */}
@@ -19,13 +22,14 @@ const About = () => {
                 src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                 alt="Equipo ATLAS"
                 className="object-cover w-full h-full"
+                loading="lazy"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-xl hidden lg:block">
+            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-dark-secondary p-6 rounded-lg shadow-xl hidden lg:block">
               <div className="flex items-center space-x-4">
-                <div className="bg-red-100 p-3 rounded-full">
+                <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-full">
                   <svg
-                    className="w-6 h-6 text-red-600"
+                    className="w-6 h-6 text-red-600 dark:text-red-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -39,10 +43,12 @@ const About = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-900">
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">
                     Certificación Internacional
                   </p>
-                  <p className="text-sm text-gray-500">ISO 9001:2015</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    ISO 9001:2015
+                  </p>
                 </div>
               </div>
             </div>
@@ -51,10 +57,10 @@ const About = () => {
           {/* Columna de Contenido */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Transformando Vidas a través de la Excelencia en Fisioterapia
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
                 En ATLAS, nos dedicamos a proporcionar atención fisioterapéutica
                 de la más alta calidad, combinando experiencia, innovación y un
                 enfoque personalizado para cada paciente.
@@ -63,11 +69,16 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <p className="text-3xl font-bold text-red-600 mb-2">
+                <div
+                  key={index}
+                  className="bg-gray-50 dark:bg-dark-secondary p-6 rounded-lg shadow-sm"
+                >
+                  <p className="text-3xl font-bold text-red-600 dark:text-red-500 mb-2">
                     {stat.number}
                   </p>
-                  <p className="text-sm text-gray-600">{stat.label}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -76,7 +87,7 @@ const About = () => {
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-red-600"
+                    className="w-6 h-6 text-red-600 dark:text-red-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -89,7 +100,7 @@ const About = () => {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Equipo multidisciplinario de profesionales altamente
                   calificados
                 </p>
@@ -97,7 +108,7 @@ const About = () => {
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-red-600"
+                    className="w-6 h-6 text-red-600 dark:text-red-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -110,14 +121,14 @@ const About = () => {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Tecnología de vanguardia y técnicas innovadoras
                 </p>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-red-600"
+                    className="w-6 h-6 text-red-600 dark:text-red-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -130,7 +141,7 @@ const About = () => {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Enfoque personalizado para cada paciente
                 </p>
               </div>

@@ -7,21 +7,37 @@ import Testimonials from "./components/sections/Testimonials";
 import Gallery from "./components/sections/Gallery";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/layout/ScrollToTop";
+import AnimatedSection from "./components/common/AnimatedSection";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <Testimonials />
-      </main>
-      <Gallery />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-dark-primary transition-colors duration-300">
+        <Navbar />
+        <main>
+          <Hero />
+          <AnimatedSection animation="fade-up">
+            <Services />
+          </AnimatedSection>
+          <AnimatedSection animation="fade-up">
+            <About />
+          </AnimatedSection>
+          <AnimatedSection animation="fade-up">
+            <Testimonials />
+          </AnimatedSection>
+          <AnimatedSection animation="fade-up">
+            <Gallery />
+          </AnimatedSection>
+          <AnimatedSection animation="fade-up">
+            <Contact />
+          </AnimatedSection>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </ThemeProvider>
   );
 }
 

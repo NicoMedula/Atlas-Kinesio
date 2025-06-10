@@ -55,34 +55,38 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonios" className="py-16 sm:py-20 bg-white">
+    <section
+      id="testimonios"
+      className="py-16 sm:py-20 bg-white dark:bg-dark-primary transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
             Experiencias reales de personas que han transformado su vida con
             nosotros
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 md:p-12">
+          <div className="bg-white dark:bg-dark-secondary rounded-lg shadow-xl p-6 sm:p-8 md:p-12">
             <div className="flex flex-col items-center">
               <img
                 src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].name}
                 className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mb-6"
+                loading="lazy"
               />
-              <p className="text-lg sm:text-xl text-gray-600 text-center mb-6">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 text-center mb-6">
                 "{testimonials[currentIndex].text}"
               </p>
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-gray-900">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {testimonials[currentIndex].name}
                 </h4>
-                <p className="text-red-600">
+                <p className="text-red-600 dark:text-red-500">
                   {testimonials[currentIndex].role}
                 </p>
               </div>
@@ -92,10 +96,10 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 sm:-translate-x-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 sm:-translate-x-12 bg-white dark:bg-dark-secondary rounded-full p-2 shadow-lg hover:bg-gray-50 dark:hover:bg-dark-accent transition-colors duration-300"
           >
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-6 h-6 text-gray-600 dark:text-gray-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -110,10 +114,10 @@ const Testimonials = () => {
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 sm:translate-x-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 sm:translate-x-12 bg-white dark:bg-dark-secondary rounded-full p-2 shadow-lg hover:bg-gray-50 dark:hover:bg-dark-accent transition-colors duration-300"
           >
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-6 h-6 text-gray-600 dark:text-gray-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -138,7 +142,9 @@ const Testimonials = () => {
                 setCurrentIndex(index);
               }}
               className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                index === currentIndex ? "bg-red-600" : "bg-gray-300"
+                index === currentIndex
+                  ? "bg-red-600 dark:bg-red-500"
+                  : "bg-gray-300 dark:bg-gray-600"
               }`}
             />
           ))}
